@@ -16,7 +16,33 @@ namespace CSharp.Assignments.Loop1
     {
         public static void Main()
         {
-            // Complete your loop codes here.
+            
+            int i,front,back,sum=0;
+            i = 0;
+            int j = 0;
+            int k = 0;
+            back = 0;
+            while(i >=0)
+            {
+                i = Convert.ToInt32(Console.ReadLine());
+                
+                if (j == 0)
+                {
+                    if (i < 0) break;
+                    else
+                    {
+                        front = i;
+                    }
+                    j++;
+                }
+                else
+                {
+
+                }
+
+            }
+
+
         }
     }
 }
