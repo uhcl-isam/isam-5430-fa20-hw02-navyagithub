@@ -16,32 +16,47 @@ namespace CSharp.Assignments.Loop1
     {
         public static void Main()
         {
-            
-            int i,front,back,sum=0;
-            i = 0;
-            int j = 0;
-            int k = 0;
-            back = 0;
-            while(i >=0)
+
+            int i, j,sum = 0;
+           
+           
+            //Console.WriteLine("Enter the list of numbers:");
+            i = Convert.ToInt32(Console.ReadLine());
+            while (true)
             {
-                i = Convert.ToInt32(Console.ReadLine());
                 
-                if (j == 0)
+               
+                if (i < 0)
+                    break;
+                j = Convert.ToInt32(Console.ReadLine());
+                if (j >= 0)
                 {
-                    if (i < 0) break;
+                    if (j < i && j!=0 )
+                    {
+                        sum = sum + (i - j) + 1;
+                        i = j + (i - j) + 1;
+                    }
+                    else if(j==i && j!=0)
+                    {
+                        sum = sum + 1;
+                        i = j + 1;
+                    }
+                 
                     else
                     {
-                        front = i;
+                        i = j;
                     }
-                    j++;
                 }
                 else
-                {
+                    break;
+            
+     
+               // Console.WriteLine("sum"+sum);
 
-                }
 
             }
 
+            Console.WriteLine("sum is" + sum);
 
         }
     }

@@ -16,7 +16,36 @@ namespace CSharp.Assignments.Loop1
     {
         public static void Main()
         {
-            // Write your codes here
+            int i ,j,sum=0;
+            string h;
+            int k=0;
+            String atcmd = "AT C5\u001a";
+
+            i = Convert.ToInt32(Console.ReadLine());
+            while (true)
+            {
+                String p = Console.ReadLine();
+                if (p == atcmd)
+                    break;
+                j = Convert.ToInt32(p);
+                
+                if(i==j)
+                {
+                    if (k == 0)
+                    {
+                        sum++;
+                        k++;
+                    }
+                }
+                else
+                {
+                    k = 0;  
+
+                  }
+                i = j;
+            }
+
+            Console.WriteLine(sum);
         }
     }
 }
