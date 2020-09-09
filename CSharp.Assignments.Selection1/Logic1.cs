@@ -139,7 +139,14 @@ namespace CSharp.Assignments.Loop1
             return true;
         else if ((num - 2) % 10 == 0)
             return true;
-        else
+            if ((num + 1) % 10 == 0)
+                return true;
+            else if ((num + 2) % 10 == 0)
+                return true;
+            else if ((num ) % 10 == 0)
+                return true;
+
+
             return false;
 
         }
@@ -268,7 +275,7 @@ namespace CSharp.Assignments.Loop1
         public static bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
         {
                 //throw new NotImplementedException();
-                if (isMorning == true)
+                if (isMorning == true  &&  isAsleep==false)
                 {
                     if (isMom == true)
                         return true;
@@ -299,57 +306,60 @@ namespace CSharp.Assignments.Loop1
                 string a = number.ToString();
                 int l = a.Length;
                 int j = 1;
-                if(l%2!=0)
+            if ((l == 1) || (l==2))
+                return false;
+            else if (l % 2 != 0)
+            {
+                for (int i = 0; i < l / 2; i++)
                 {
-                    for(int i=0; i < l / 2; i++)
-                    {
-                        if (((int)(a[i] - '0')) < ((int)(a[i + 1] - '0')))
-                            j = 1;
-                        else
-                            return false;
-                        
-
-                    }
-                    for (int i = l / 2; i < l; i++)
-                    {
-                        if (((int)(a[i] - '0')) > ((int)(a[i + 1] - '0')))
-                            j = 2;
-                        else
-                            return false;
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < (l / 2)-1; i++)
-                    {
-                        if (((int)(a[i] - '0')) < ((int)(a[i + 1] - '0')))
-                            j = 1;
-                       
-                                else
-                                    return false;
-
-
-                            }
-                    int k = l / 2;
-                    int p = (l / 2) - 1;
-
-                    if (((int)(a[k] - '0')) == ((int)(a[p] - '0')) )
-                        j = 2;
+                    if (((int)(a[i] - '0')) < ((int)(a[i + 1] - '0')))
+                        j = 1;
                     else
                         return false;
 
-                    for (int i = l/2; i < l; i++)
-                    {
-                        if (((int)(a[i] - '0')) >((int)(a[i + 1] - '0')))
-                            j = 1;
-
-                        else
-                            return false;
-
-
-                    }
 
                 }
+                for (int i = (l / 2) + 1; i <
+                    l-1; i++)
+                {
+                    if (((int)(a[i] - '0')) > ((int)(a[i + 1] - '0')))
+                        j = 2;
+                    else
+                        return false;
+                }
+            }
+        /*    else
+            {
+                for (int i = 0; i < (l / 2) - 1; i++)
+                {
+                    if (((int)(a[i] - '0')) < ((int)(a[i + 1] - '0')))
+                        j = 1;
+
+                    else
+                        return false;
+
+
+                }
+                int k = l / 2;
+                int p = (l / 2) - 1;
+
+                if (((int)(a[k] - '0')) == ((int)(a[p] - '0')))
+                    j = 2;
+                else
+                    return false;
+
+                for (int i = (l / 2) + 1; i < l; i++)
+                {
+                    if (((int)(a[i] - '0')) > ((int)(a[i + 1] - '0')))
+                        j = 1;
+
+                    else
+                        return false;
+
+
+                }
+
+            }*/
                 
             return false;
 
@@ -367,12 +377,20 @@ namespace CSharp.Assignments.Loop1
         public static bool CloseFar(int a, int b, int c)
         {
             //throw new NotImplementedException();
-            if (b - c <= 1 || c - b <= 1)
-                return true;
-            else if (((a - b >= 2) || (b - a >= 2)) && ((a - c >= 2) || (c - a >= 2)))
-                return true;
-            else
+            if (Math.Abs(a - c) <= 1)
+            {
+
+                if (Math.Abs(a - b) >= 2 && Math.Abs(b - c) >= 2)
+                    return true;
+            }
+            else if (Math.Abs(a - b) <= 1)
+            {
+                if (Math.Abs(a - c) >= 2 && Math.Abs(b - c) >= 2)
+                    return true;
+            }
+            
                 return false;
+        
         }
     }
 }
