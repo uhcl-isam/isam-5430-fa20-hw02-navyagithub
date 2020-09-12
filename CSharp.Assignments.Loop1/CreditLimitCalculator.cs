@@ -25,7 +25,7 @@ namespace CSharp.Assignments.Loop1
     {
         public static void Main()
         {
-            Console.WriteLine("Hello");
+            //Console.WriteLine("Hello");
             // read in account number
             // Enter your sentinel loop here
             int acctnum, bbg, charge, ttcredit, credlmt, newbl;
@@ -33,19 +33,27 @@ namespace CSharp.Assignments.Loop1
             while (true)
             {
                 acctnum = Convert.ToInt32(Console.ReadLine());
+                if (acctnum < 0)
+                {
 
-               
+                    break;
+
+                }
+                //123456, 1000, 451, 523, 3000
+               /* 123456, 1000, 451, 523, 3000,
+                        777777, 1234, 2123, 1744, 1500,
+                        1854332, 43, 123, 111, 54,
+                        1775434, 43, 123, 111, 55,
+                        -1, 43, 123, 111, 60, // sentinel
+                        -1, 43, 123, 111, 60*/
+
                 bbg = Convert.ToInt32(Console.ReadLine());
 
                 charge = Convert.ToInt32(Console.ReadLine());
                 ttcredit = Convert.ToInt32(Console.ReadLine());
                 credlmt = Convert.ToInt32(Console.ReadLine());
 
-                if (acctnum < 0)
-                {
-                    break;
-
-                }
+                
 
                 newbl = bbg + charge - ttcredit;
                 Console.WriteLine(newbl);

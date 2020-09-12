@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,19 @@ namespace CSharp.Assignments.Loop1
         public static void Main()
         {
             // Write your codes here
+            int i, j, n;
+            n = Convert.ToInt32(Console.ReadLine());
+            for (i = 1; i <= n; i++)
+            {
+                for (j = n; j >= 1; j--)
+                {
+                    if (i >= j)
+                        Console.Write(j+" ");
+                    else
+                        Console.Write("0 ");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }

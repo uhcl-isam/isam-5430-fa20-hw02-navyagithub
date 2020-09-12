@@ -17,25 +17,35 @@ namespace CSharp.Assignments.Loop1
             int i,j,k;
             if (end <= 0)
             {
-                Console.WriteLine("0");
+                
+            }
+            else if(end==1)
+            {
+                Console.WriteLine("0 1 1");
             }
             else
             {
                 i = 0;
-                Console.Write(i);
+                Console.WriteLine(i);
                 j = 1;
-                Console.Write(j);
-                if (j <= end)
-                {
-                    k = i + j;
-                    Console.Write(k);
-                }
+                Console.WriteLine(j);
+
+                /* if (j <= end)
+                 {
+                     k = i + j;
+                     Console.Write(k);
+                 }*/
+
+                
+
                 k = i + j;
-                while (k <= end)
+                Console.WriteLine(k);
+                while (k < end)
                 {
                     
                     i = k + j;
-                    Console.Write(i);
+                    if(i<=end)
+                    Console.WriteLine(i);
 
                     j = k;
                     k = i;

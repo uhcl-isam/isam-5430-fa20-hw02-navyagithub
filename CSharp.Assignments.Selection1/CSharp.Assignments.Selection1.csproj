@@ -3,6 +3,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>CSharp.Assignments.Selection1.Program</StartupObject>
+    <RootNamespace>CSharp.Assignments.Selection1</RootNamespace>
+    <AssemblyName>CSharp.Assignments.Selection1</AssemblyName>
   </PropertyGroup>
 
 </Project>

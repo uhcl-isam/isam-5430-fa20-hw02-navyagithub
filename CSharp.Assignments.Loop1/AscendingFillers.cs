@@ -18,7 +18,7 @@ namespace CSharp.Assignments.Loop1
         {
 
             int i, j, sum = 0;
-            string input,n;
+            string input, n;
 
             Console.WriteLine("Enter the list of numbers:");
             input = Console.ReadLine();
@@ -81,5 +81,7 @@ namespace CSharp.Assignments.Loop1
                 Console.WriteLine("sum is" + sum);
 
             }
-        }
-    } }
+        } 
+    }
+}
+

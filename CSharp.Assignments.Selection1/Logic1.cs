@@ -300,68 +300,98 @@ namespace CSharp.Assignments.Loop1
         /// Use % 10 and / 10 to fetch and reduce each digit.
         /// </summary>
         /// <param name="number">Number.</param>
-        public static bool IsHilly(int number)
+        public static bool IsHilly(int num)
         {
-                // throw new NotImplementedException();
-                string a = number.ToString();
-                int l = a.Length;
-                int j = 1;
-            if ((l == 1) || (l==2))
-                return false;
-            else if (l % 2 != 0)
+            int curr, temp,  des = 0, c = 0, a = 0;
+            
+            curr = num % 10;
+            num = num / 10;
+            while (num > 0)
             {
-                for (int i = 0; i < l / 2; i++)
+                temp = num % 10;
+                if (temp > curr && a == 0)
                 {
-                    if (((int)(a[i] - '0')) < ((int)(a[i + 1] - '0')))
-                        j = 1;
-                    else
-                        return false;
-
-
+                    c++;
                 }
-                for (int i = (l / 2) + 1; i <
-                    l-1; i++)
+                else if ((temp == curr || temp < curr) && c > 0)
                 {
-                    if (((int)(a[i] - '0')) > ((int)(a[i + 1] - '0')))
-                        j = 2;
-                    else
-                        return false;
+                    des++;
+                    c = 0;
+                    a++;
                 }
-            }
-        /*    else
-            {
-                for (int i = 0; i < (l / 2) - 1; i++)
-                {
-                    if (((int)(a[i] - '0')) < ((int)(a[i + 1] - '0')))
-                        j = 1;
-
-                    else
-                        return false;
-
-
-                }
-                int k = l / 2;
-                int p = (l / 2) - 1;
-
-                if (((int)(a[k] - '0')) == ((int)(a[p] - '0')))
-                    j = 2;
+                else if (temp < curr)
+                    a++;
                 else
-                    return false;
+                    break;
+                curr = temp;
+                num = num / 10;
 
-                for (int i = (l / 2) + 1; i < l; i++)
-                {
-                    if (((int)(a[i] - '0')) > ((int)(a[i + 1] - '0')))
-                        j = 1;
+            }
+            if (num == 0 && des == 1 && a > 0)
+                return true;
+            else
+                return false;
+            // throw new NotImplementedException();
+            /*  string a = number.ToString();
+              int l = a.Length;
+              int j = 1;
+          if ((l == 1) || (l==2))
+              return false;
+          else if (l % 2 != 0)
+          {
+              for (int i = 0; i < l / 2; i++)
+              {
+                  if (((int)(a[i] - '0')) < ((int)(a[i + 1] - '0')))
+                      j = 1;
+                  else
+                      return false;
 
-                    else
-                        return false;
+
+              }
+              for (int i = (l / 2) + 1; i <
+                  l-1; i++)
+              {
+                  if (((int)(a[i] - '0')) > ((int)(a[i + 1] - '0')))
+                      j = 2;
+                  else
+                      return false;
+              }
+          }
+      /*    else
+          {
+              for (int i = 0; i < (l / 2) - 1; i++)
+              {
+                  if (((int)(a[i] - '0')) < ((int)(a[i + 1] - '0')))
+                      j = 1;
+
+                  else
+                      return false;
 
 
-                }
+              }
+              int k = l / 2;
+              int p = (l / 2) - 1;
 
-            }*/
-                
-            return false;
+              if (((int)(a[k] - '0')) == ((int)(a[p] - '0')))
+                  j = 2;
+              else
+                  return false;
+
+              for (int i = (l / 2) + 1; i < l; i++)
+              {
+                  if (((int)(a[i] - '0')) > ((int)(a[i + 1] - '0')))
+                      j = 1;
+
+                  else
+                      return false;
+
+
+              }
+
+          }*/
+
+            //return false;
+            
 
         }
 
