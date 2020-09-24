@@ -22,8 +22,25 @@ namespace CSharp.Assignments.Loop1
     {
         public static void Main()
         {
+            int mile,miles=0,gallon,gallons=0;
+            
+            mile = int.Parse(Console.ReadLine());
+            while (mile>0)
+            {
+                gallon= int.Parse(Console.ReadLine());
+                Console.WriteLine((decimal)(mile / gallon));
+                miles = miles + mile;
+                gallons = gallons + gallon;
+                Console.WriteLine((decimal)(miles / gallons));
+                mile = int.Parse(Console.ReadLine());
+
+
+            }
             // prompt user for non-negative miles and obtain the input from user
             // codes go here.
+
+            
+
         }
     }
 }

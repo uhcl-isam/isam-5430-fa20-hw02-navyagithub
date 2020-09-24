@@ -83,6 +83,7 @@ namespace CSharp.Assignments.Loop1.Tests
 
                     result = app.Run(12, 998321, 112, 7744, 123454321).Trim();
                     result = result.Substring(result.LastIndexOf('\n') + 1).Trim();
+                    
                     StringAssert.IsMatch("^[^n]*?palindrome", result.ToLowerInvariant(), Case1);
 
                     result = app.Run(1000000001, 100000000).Trim();

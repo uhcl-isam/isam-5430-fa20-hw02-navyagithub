@@ -60,7 +60,7 @@ namespace CSharp.Assignments.Loop1
                         Console.WriteLine("a palindrome");
                     else
                     {
-                        Console.WriteLine("not a palindrome");
+                        Console.WriteLine("Not Palindrome");
                     }
                 }
 

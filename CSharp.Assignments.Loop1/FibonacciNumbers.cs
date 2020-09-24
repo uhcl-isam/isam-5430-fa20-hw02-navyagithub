@@ -17,7 +17,7 @@ namespace CSharp.Assignments.Loop1
             int i,j,k;
             if (end <= 0)
             {
-                
+                Console.WriteLine("0");
             }
             else if(end==1)
             {

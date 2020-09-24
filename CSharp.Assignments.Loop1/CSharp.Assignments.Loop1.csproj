@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>CSharp.Assignments.Loop1.CreditLimitCalculator</StartupObject>
+    <StartupObject>CSharp.Assignments.Loop1.LargestNumbers</StartupObject>
     <RootNamespace>CSharp.Assignments.Loop1</RootNamespace>
     <AssemblyName>CSharp.Assignments.Loop1</AssemblyName>
   </PropertyGroup>
